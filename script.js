@@ -1,4 +1,5 @@
-async function fetchSortedDistricts(searchDistrict) {
+
+async function fetchSortedDistricts(searchTerm) {
     const statusElement = document.getElementById("status");
     const districtListElement = document.getElementById("districtList");
 
@@ -9,24 +10,37 @@ async function fetchSortedDistricts(searchDistrict) {
         const response = await fetch("districts.json");
         const districtsData = await response.json();
 
+        const lowerCaseSearchTerm = searchTerm.toLowerCase();
         const searchedDistrict = districtsData.find(
-            (d) => d.district.toLowerCase() === searchDistrict.toLowerCase()
+            (d) => d.district.toLowerCase() === lowerCaseSearchTerm
         );
 
-        if (!searchedDistrict) {
-            statusElement.textContent = "District not found in the dataset!";
+        const stateDistricts = districtsData.filter(
+            (d) => d.state.toLowerCase() === lowerCaseSearchTerm
+        );
+
+        if (!searchedDistrict && stateDistricts.length === 0) {
+            statusElement.textContent = "No matching district or state found in the dataset!";
             return;
         }
 
-        
-        const { latitude: districtLat, longitude: districtLon } = searchedDistrict;
+        let referenceLatitude, referenceLongitude;
 
+        if (searchedDistrict) {
+            referenceLatitude = searchedDistrict.latitude;
+            referenceLongitude = searchedDistrict.longitude;
+            statusElement.textContent = `Sorting all districts based on proximity to ${searchedDistrict.district}.`;
+        } else if (stateDistricts.length > 0) {
+            referenceLatitude = stateDistricts[0].latitude;
+            referenceLongitude = stateDistricts[0].longitude;
+            statusElement.textContent = `Sorting all districts based on proximity to ${stateDistricts[0].state}.`;
+        }
 
         const sortedDistricts = districtsData
             .map((district) => {
                 const distance = calculateDistance(
-                    districtLat,
-                    districtLon,
+                    referenceLatitude,
+                    referenceLongitude,
                     district.latitude,
                     district.longitude
                 );
@@ -34,8 +48,7 @@ async function fetchSortedDistricts(searchDistrict) {
             })
             .sort((a, b) => a.distance - b.distance);
 
-       
-        statusElement.textContent = `Found ${sortedDistricts.length} districts.`;
+        districtListElement.innerHTML = "";
         sortedDistricts.forEach((district) => {
             const listItem = document.createElement("li");
             listItem.textContent = `${district.district}, ${district.state} (Distance: ${district.distance.toFixed(2)} km)`;
@@ -47,29 +60,24 @@ async function fetchSortedDistricts(searchDistrict) {
     }
 }
 
-
 function calculateDistance(lat1, lon1, lat2, lon2) {
     const toRad = (value) => (value * Math.PI) / 180;
-    const R = 6371; 
-
+    const R = 6371;
     const dLat = toRad(lat2 - lat1);
     const dLon = toRad(lon2 - lon1);
-
     const a =
         Math.sin(dLat / 2) * Math.sin(dLat / 2) +
         Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
         Math.sin(dLon / 2) * Math.sin(dLon / 2);
-
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c; 
+    return R * c;
 }
 
-
 document.getElementById("searchButton").addEventListener("click", () => {
-    const districtName = document.getElementById("districtInput").value.trim();
-    if (districtName) {
-        fetchSortedDistricts(districtName);
+    const searchTerm = document.getElementById("districtInput").value.trim();
+    if (searchTerm) {
+        fetchSortedDistricts(searchTerm);
     } else {
-        alert("Please enter a district name.");
+        alert("Please enter a district or state name.");
     }
 });
