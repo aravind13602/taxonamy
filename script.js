@@ -6,11 +6,9 @@ async function fetchSortedDistricts(searchDistrict) {
     districtListElement.innerHTML = "";
 
     try {
-        // Load the district data
         const response = await fetch("districts.json");
         const districtsData = await response.json();
 
-        // Find the searched district
         const searchedDistrict = districtsData.find(
             (d) => d.district.toLowerCase() === searchDistrict.toLowerCase()
         );
@@ -20,10 +18,10 @@ async function fetchSortedDistricts(searchDistrict) {
             return;
         }
 
-        // Extract latitude and longitude of the searched district
+        
         const { latitude: districtLat, longitude: districtLon } = searchedDistrict;
 
-        // Calculate distances and sort districts
+
         const sortedDistricts = districtsData
             .map((district) => {
                 const distance = calculateDistance(
@@ -36,7 +34,7 @@ async function fetchSortedDistricts(searchDistrict) {
             })
             .sort((a, b) => a.distance - b.distance);
 
-        // Display sorted results
+       
         statusElement.textContent = `Found ${sortedDistricts.length} districts.`;
         sortedDistricts.forEach((district) => {
             const listItem = document.createElement("li");
@@ -49,10 +47,10 @@ async function fetchSortedDistricts(searchDistrict) {
     }
 }
 
-// Function to calculate distance using the Haversine formula
+
 function calculateDistance(lat1, lon1, lat2, lon2) {
     const toRad = (value) => (value * Math.PI) / 180;
-    const R = 6371; // Earth's radius in km
+    const R = 6371; 
 
     const dLat = toRad(lat2 - lat1);
     const dLon = toRad(lon2 - lon1);
@@ -63,10 +61,10 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
         Math.sin(dLon / 2) * Math.sin(dLon / 2);
 
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c; // Distance in km
+    return R * c; 
 }
 
-// Event listener for the search button
+
 document.getElementById("searchButton").addEventListener("click", () => {
     const districtName = document.getElementById("districtInput").value.trim();
     if (districtName) {
