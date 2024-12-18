@@ -552,6 +552,13 @@
         "longitude": 76.492455
     },
     {
+        "city": "Bettiah",
+        "state": "Bihar",
+        "latitude": 26.8018,
+        "longitude": 84.5025
+    },
+    
+    {
         "state": "Madhya Pradesh",
         "district": "Khargone",
         "latitude": 22.2265,
@@ -1774,6 +1781,12 @@
         "district": "South Andamans",
         "latitude": 11.66583333,
         "longitude": 92.74111111
+    },
+    {
+        "state": "Andaman and Nicobar Islands",
+        "district": "Port Blair",
+        "latitude": 11.623377,
+        "longitude": 92.726486
     },
     {
         "state": "Andaman and Nicobar Islands",
@@ -3594,6 +3607,12 @@
         "longitude": 85.260769
     },
     {
+        "city": "Bihar Sharif",
+        "state": "Bihar",
+        "latitude": 25.205,
+        "longitude": 85.5171
+    },
+    {
         "state": "Bihar",
         "district": "Jehanabad",
         "latitude": 25.2164645,
@@ -3660,6 +3679,12 @@
         "longitude": 84.4332
     },
     {
+        "city": "Barauni",
+        "state": "Bihar",
+        "latitude": 25.4138,
+        "longitude": 85.9662
+    },
+    {
         "state": "Bihar",
         "district": "Siwan",
         "latitude": 26.275624,
@@ -3670,6 +3695,12 @@
         "district": "Pashchim Champaran",
         "latitude": 27.1192246,
         "longitude": 84.21207
+    },
+    {
+        "city": "Ara",
+        "state": "Bihar",
+        "latitude": 25.563,
+        "longitude": 84.6714
     },
     {
         "state": "Bihar",
@@ -4057,9 +4088,33 @@
     },
     {
         "state": "Assam",
+        "district": "dispur",
+        "latitude": 26.1445,
+        "longitude": 991.7362
+    },
+    {
+        "state": "Assam",
+        "district": "guwahati",
+        "latitude": 26.2006,
+        "longitude": 91.7000
+    },
+    {
+        "state": "Assam",
+        "district": "silchar",
+        "latitude": 24.8220,
+        "longitude": 92.7797
+    },
+    {
+        "state": "Assam",
         "district": "Karimganj",
         "latitude": 24.5,
         "longitude": 92.43
+    },
+    {
+        "state": "Assam",
+        "district": "tezpur",
+        "latitude": 26.6518,
+        "longitude": 92.7926
     },
     {
         "state": "Assam",
@@ -4123,15 +4178,75 @@
     },
     {
         "state": "Andhra Pradesh",
+        "district": "Chandragiri",
+        "latitude": 13.5891,
+        "longitude": 79.2821
+    },
+    {
+        "state": "Andhra Pradesh",
+        "district": "Dowlaiswaram",
+        "latitude": 16.9500,
+        "longitude": 81.8000
+    },
+    {
+        "state": "Andhra Pradesh",
+        "district": "Adoni",
+        "latitude": 15.6322,
+        "longitude": 77.2728
+    },
+    {
+        "state": "Andhra Pradesh",
+        "district": "Kadapa",
+        "latitude": 14.4772,
+        "longitude": 78.8049
+    },
+    {
+        "state": "Andhra Pradesh",
+        "district": "Amaravati",
+        "latitude": 16.5061,
+        "longitude": 80.5059
+    },
+    {
+        "state": "Andhra Pradesh",
+        "district": "machilipatnam",
+        "latitude": 16.1700,
+        "longitude": 81.1300
+    },
+    {
+        "state": "Andhra Pradesh",
         "district": "Kurnool",
         "latitude": 15.8281,
         "longitude": 78.0373
     },
     {
         "state": "Andhra Pradesh",
+        "district": "vijayawada",
+        "latitude": 16.5062,
+        "longitude": 80.6480
+    },
+    {
+        "state": "Andhra Pradesh",
+        "district": "Rajahmundry",
+        "latitude": 16.9934,
+        "longitude": 81.8347
+    },
+    {
+        "state": "Andhra Pradesh",
+        "district": "Nagarjunakonda",
+        "latitude": 16.5223,
+        "longitude": 79.2401
+    },
+    {
+        "state": "Andhra Pradesh",
         "district": "Nandyal",
         "latitude": 15.4888,
         "longitude": 78.4860
+    },
+    {
+        "state": "Andhra Pradesh",
+        "district": "yemmiganur",
+        "latitude": 15.7923,
+        "longitude": 77.4532
     },
     {
         "state": "Gujarat",
@@ -4176,16 +4291,46 @@
         "longitude": 86.346
     },
     {
+        "city": "Bodh Gaya",
+        "state": "Bihar",
+        "latitude": 24.6951,
+        "longitude": 84.9915
+    },
+    {
         "state": "Bihar",
         "district": "Madhubani",
         "latitude": 25.7362,
         "longitude": 86.0642
     },
     {
+        "city": "Chapra",
+        "state": "Bihar",
+        "latitude": 25.7801,
+        "longitude": 84.747
+    },
+    {
         "state": "Bihar",
         "district": "Supaul",
         "latitude": 26.23884,
         "longitude": 86.46051
+    },
+    {
+        "city": "Dinapur Nizamat",
+        "state": "Bihar",
+        "latitude": 25.6368,
+        "longitude": 85.045
+    },
+    {
+        "city": "Dehri",
+        "state": "Bihar",
+        "latitude": 24.8974,
+        "longitude": 84.187
+    },
+    {
+        "city": "Hajipur",
+        "state": "Bihar",
+        "latitude": 25.685,
+        "longitude": 85.2089
     },
     {
         "state": "Bihar",
@@ -4228,6 +4373,12 @@
         "district": "West Siang",
         "latitude": 28.1948772,
         "longitude": 94.7160922
+    },
+    {
+        "state": "Arunachal Pradesh",
+        "district": "Itanagar",
+        "latitude": 27.0841,
+        "longitude": 93.6053
     },
     {
         "state": "Arunachal Pradesh",

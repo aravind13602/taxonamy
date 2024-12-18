@@ -7,7 +7,7 @@ async function fetchSortedDistricts(searchTerm) {
     districtListElement.innerHTML = "";
 
     try {
-        const response = await fetch("districts.json");
+        const response = await fetch("updated_districts.json");
         const districtsData = await response.json();
 
         const lowerCaseSearchTerm = searchTerm.toLowerCase();
